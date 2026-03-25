@@ -723,12 +723,14 @@ Interpretation: The digits data exhibits low-dimensional structure. The first 20
 
 
 Figure X: 3D PCA Visualization of Digits Data
+
 The 3D visualization provides additional insight into the geometric structure of the digits data. The first three principal components capture the following explained variance:
 | Principal Component	| Explained Variance	| Cumulative Variance | 
 | - | - | - |
 | PC1	| 18.5%	| 18.5% |
 | PC2	| 11.2%	| 29.7% | 
 | PC3	| 5.5%	| 35.2% | 
+
 Key observations from the 3D visualization:
 •	Digit 0 forms a tight, well-separated cluster, explaining why it is rarely misclassified (confusion matrix shows 0 has high accuracy).
 •	Digits 4 and 9 exhibit significant overlap in the 3D space, consistent with the confusion matrix showing these as the most commonly confused pair.
@@ -826,7 +828,8 @@ The neural network achieves 8.75% higher accuracy and substantially lower loss. 
 | Neural Network (h=32)	| 0.9533	| [0.950, 0.956]	| 0.1657	| [0.161, 0.171]| 
 
 The neural network achieves 1.5% higher mean accuracy with non-overlapping confidence intervals, indicating a statistically significant improvement. The loss difference is more pronounced (0.1657 vs 0.2695), reflecting better-calibrated probabilities. While digit classification benefits from nonlinear feature combinations, the linear model already captures much of the structure—digits are reasonably well-separated in pixel space.
- 
+
+
 **4. Capacity Matters: Hidden Width Governs Representational Power**
 | Hidden Width	| Final Validation Loss	| Test Accuracy| 
 | -| -| -|
@@ -853,10 +856,10 @@ Both Momentum and Adam outperform standard SGD, achieving 0.56% higher validatio
 **6. PCA Reveals Low-Dimensional Structure in Digits**
 | PCA Dimensions	| Test Accuracy (Softmax)| 
 | -|- |
-| 10	| 0.8995
-| 20	| 0.9266
-| 40	| 0.9321
-| 64 (full)	| 0.9375
+| 10	| 0.8995| 
+| 20	| 0.9266| 
+| 40	| 0.9321| 
+| 64 (full)	| 0.9375| 
 
 Reducing dimensions from 64 to 40 preserves 99.4% of original accuracy. The scree plot shows an "elbow" around 10–20 components, indicating that the effective dimensionality of digit classification is substantially lower than the original pixel space. This explains why a linear model performs reasonably well—the data lies near a low-dimensional linear subspace.
 
