@@ -908,7 +908,7 @@ Based on our experiments, we can answer the central question of this capstone:
 Additional model complexity is justified only when the underlying data geometry is nonlinear. For linearly separable tasks, the neural network adds no benefit. For tasks with curved decision boundaries, the hidden layer enables the model to learn appropriate nonlinear representations. On the digits benchmark—a real-world task—the neural network achieves modest but statistically significant improvement, demonstrating that real data often contains nonlinear structure that linear models cannot fully capture. However, the improvement is modest because the digits data is approximately low-dimensional and reasonably well-separated in pixel space, as confirmed by PCA analysis.
 
 
-
+----
 
 
 # 9. Mathematical Analysis and Derivatives
