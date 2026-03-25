@@ -12,10 +12,10 @@
 ## Table of Contents
 
 1. [Project Overview](#1-project-overview)
-2. [Core Questions and Motivation](#2-core-questions-and-motivation)
+2. [Core Questions](#2-core-questions)
 3. [Installation and Setup](#3-installation-and-setup)
 4. [Project Structure](#4-project-structure)
-5. [Technical Architecture](#5-technical-architecture)
+5. [Working Mechanisms of Models](#5-working-mechanisms-of-models)
 6. [Implementation Details](#6-implementation-details)
 7. [Data](#7-data)
 8. [Implementation Sanity Checks, Experiments and Results](#8-implementation-sanity-checks-experiments-and-results)
@@ -32,7 +32,7 @@ This capstone project is the final phase of the Math4AI program organized by **N
 
 ---
 
-# 2. Core Questions and Motivation
+# 2. Core Questions
 
 ## Scientific Question
 
@@ -221,9 +221,9 @@ Project/
 
 ---
 
-# 5. Technical Architecture
+# 5. Working Mechanisms of Models
 
-## Softmax Regression Architecture
+## Softmax Regression
 
 Softmax Regression is a linear classifier with the following architecture:
 
@@ -262,7 +262,7 @@ P = softmax(Z)               # P[i,j] = exp(Z[i,j]) / Σexp(Z[i,:])
 L = -Σ Y[i] * log(P[i])      # Cross-entropy loss
 ```
 
-## One-Hidden-Layer Neural Network Architecture
+## One-Hidden-Layer Neural Network
 
 This architecture is a two-layer neural network: one hidden layer and one output layer.
 
@@ -289,7 +289,7 @@ Z₂ = H @ W₂.T + b₂            # Output transformation
 P = softmax(Z₂)                # Final probabilities
 ```
 
-## Parameter Count Comparison
+## Parameter Count
 
 | Model | Parameters | Formula |
 |-------|------------|---------|
