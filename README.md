@@ -30,27 +30,7 @@
 
 # 1. Project Overview
 
-This capstone project is the final phase of the Math4AI program organized by **National AI Center - AI Academy**. The primary goal is to provide students with a deep understanding of linear and non-linear classification methods through both mathematical analysis and practical implementation.
-
-## Project Objectives
-
-This project aims to develop the following skills:
-
-1. **Mathematical Understanding:** Comprehending the application of linear algebra, probability theory, and optimization methods in machine learning
-2. **Programming Skills:** Building and training neural networks from scratch using NumPy
-3. **Scientific Methodology:** Experimental design, result analysis, and interpretation skills
-4. **Communication:** Writing technical reports and preparing scientific presentations
-
-## What You Will Learn
-
-Upon completing this project, you will have a deep understanding of:
-
-- How softmax function and cross-entropy loss work
-- How the backpropagation algorithm mathematically operates
-- How the chain rule is applied in machine learning
-- Why tanh activation is specifically chosen
-- How hidden layer width affects classification capability
-- How different optimization algorithms (SGD, Momentum, Adam) differ
+This capstone project is the final phase of the Math4AI program organized by **National AI Center - AI Academy**.
 
 ---
 
@@ -72,13 +52,6 @@ This question has practical significance because choosing the most complex model
 
 **Hypothesis 3:** As hidden width increases, the model can learn more complex boundaries, but very large width can lead to overfitting.
 
-## Real-World Connection
-
-This research has direct applications in practical scenarios:
-
-- **Email spam classification:** If spam and normal emails are linearly separable, a simple model suffices
-- **Speech recognition:** Multi-layer networks are needed for complex acoustic patterns
-- **Medical diagnosis:** Non-linear models excel at detecting non-linear relationships
 
 ---
 
@@ -91,7 +64,8 @@ This research has direct applications in practical scenarios:
 | Python | 3.10+ | 3.12+ |
 | RAM | 4 GB | 8 GB |
 | Storage | 1 GB | 2 GB |
-| OS | Windows/Linux/macOS | Windows/Linux/macOS |
+
+Can work in any OS.
 
 ## Step-by-Step Installation
 
@@ -162,6 +136,9 @@ This command will automatically execute:
 - Capacity ablation
 - Optimizer comparison
 - Failure case analysis
+- Track A
+- 3D visualization Track A (optional)
+- Track B (optional, can be modified in arguments)
 
 ### Run Individual Experiments
 
@@ -242,7 +219,7 @@ Project/
 | `evaluation.py` | Metrics and sanity checks |
 | `visualization.py` | Plot and diagram functions |
 | `data_loader.py` | Dataset loading |
-| `logging_utils.py` | Result storage |
+| `logging_utils.py` | Logging utilities |
 
 ---
 
@@ -256,6 +233,12 @@ Softmax Regression is a linear classifier with the following architecture:
 Input (x) ──────► Linear Transform (Wx + b) ──────► Softmax ──────► Probability (p)
    d-dim                                                 k-classes     Σp = 1
 ```
+
+\hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o}) \quad \textrm{where}\quad \hat{y}_i = \frac{\exp(o_i)}{\sum_j \exp(o_j)}.
+
+\begin{split}\begin{aligned} \mathbf{O} &= \mathbf{X} \mathbf{W} + \mathbf{b}, \\ \hat{\mathbf{Y}} & = \mathrm{softmax}(\mathbf{O}). \end{aligned}\end{split}
+
+
 
 ### Mathematical Description
 
