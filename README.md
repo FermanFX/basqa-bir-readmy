@@ -239,11 +239,10 @@ $$\hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o}) \quad \text{where} \quad \hat{
 
 **The Forward Pass Equation:**
 $$\mathbf{O} = \mathbf{X}\mathbf{W} + \mathbf{b}$$
+
 $$\hat{\mathbf{Y}} = \mathrm{softmax}(\mathbf{O})$$
 
 ---
-
-https://sebastianraschka.com/images/faq/softmax_regression/1.png
 
 
 
