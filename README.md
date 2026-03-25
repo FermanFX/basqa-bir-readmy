@@ -17,14 +17,13 @@
 4. [Project Structure](#4-project-structure)
 5. [Technical Architecture](#5-technical-architecture)
 6. [Implementation Details](#6-implementation-details)
-7. [Datasets and Data](#7-datasets-and-data)
-8. [Experiments and Results](#8-experiments-and-results)
+7. [Data](#7-data)
+8. [Implementation Sanity Checks, Experiments and Results](#8-implementation-sanity-checks-experiments-and-results)
 9. [Mathematical Analysis and Derivatives](#9-mathematical-analysis-and-derivatives)
-10. [Graphics and Visualization](#10-graphics-and-visualization)
-11. [Evaluation Protocols](#11-evaluation-protocols)
-12. [Team and Responsibilities](#12-team-and-responsibilities)
-13. [Comprehensive Checklists](#13-comprehensive-checklists)
-14. [Frequently Asked Questions](#15-frequently-asked-questions)
+10. [Evaluation Protocols](#10-evaluation-protocols)
+11. [Team and Responsibilities](#11-team-and-responsibilities)
+12. [Comprehensive Checklists](#12-comprehensive-checklists)
+13. [Questions That Might Help](#13-questions-that-might-help)
 
 ---
 
@@ -1139,12 +1138,7 @@ Follow these steps when setting up the system.
 - [ ] Results drawn
 
 
-# 14. Frequently Asked Questions
-
-## Q: Which track should I choose?
-
-- **Track A (PCA/SVD):** If you are interested in mathematical PCA analysis
-- **Track B (Confidence):** If you are interested in model calibration and reliability
+# 14. Questions That Might Help
 
 ---
 
