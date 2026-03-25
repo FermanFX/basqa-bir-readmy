@@ -429,6 +429,9 @@ class Trainer:
                 self.best_val_loss = val_loss
 ```
 
+THERE MIGHT BE SOMETHING TO ADD HERE.
+REMIND ABOUT THIS!
+
 ## Evaluation.py
 
 Evaluation metrics:
@@ -505,7 +508,7 @@ y = digits.target       # (1797,)
 ---
 
 
-# 8. Experiments, results
+# 8. Implementation sanity checks, Experiments, results
 
 ## Implementation Sanity Checks
 To ensure our implementations were mathematically correct and numerically stable, we implemented verification functions in evaluation.py and used them to validate our models.
