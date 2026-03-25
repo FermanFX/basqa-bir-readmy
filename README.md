@@ -24,9 +24,7 @@
 11. [Evaluation Protocols](#11-evaluation-protocols)
 12. [Team and Responsibilities](#12-team-and-responsibilities)
 13. [Comprehensive Checklists](#13-comprehensive-checklists)
-14. [Submission Requirements](#14-submission-requirements)
-15. [Frequently Asked Questions](#15-frequently-asked-questions)
-16. [Grading Criteria](#16-grading-criteria)
+14. [Frequently Asked Questions](#15-frequently-asked-questions)
 
 ---
 
@@ -868,8 +866,6 @@ main (production branch)
 
 ## Starter Pack Integrity Check
 
-Before starting the project, verify the following.
-
 - [ ] `starter_pack/data/digits_data.npz` file exists
 - [ ] `starter_pack/data/digits_split_indices.npz` file exists
 - [ ] `starter_pack/data/linear_gaussian.npz` file exists
@@ -893,8 +889,6 @@ Follow these steps when setting up the system.
 - [ ] Feature branches created
 
 ## Implementation Checklist
-
-When writing code, pay attention to the following.
 
 ### Softmax Regression
 - [ ] `forward()` method correctly computes softmax
@@ -926,8 +920,6 @@ When writing code, pay attention to the following.
 
 ## Experiment Checklist
 
-For each experiment, verify the following.
-
 ### Linear Gaussian
 - [ ] Decision boundary plot created
 - [ ] Both models trained
@@ -957,136 +949,13 @@ For each experiment, verify the following.
 ### Failure Case Analysis
 - [ ] One failure case analyzed
 - [ ] Cause explained
-- [ ] Lessons drawn
+- [ ] Results drawn
 
-## Report Checklist
 
-When writing the report, pay attention to the following.
-
-### General Structure
-- [ ] Introduction written
-- [ ] Methodology written
-- [ ] Mathematical analysis written
-- [ ] Results written
-- [ ] Analysis written
-- [ ] Limitations discussed
-- [ ] Conclusion written
-
-### Mathematical Analysis
-- [ ] Softmax derivative written
-- [ ] Cross-entropy derivative written
-- [ ] Backpropagation derivatives written
-- [ ] Tanh derivative written
-- [ ] L2 regularization derivative written
-
-### Results
-- [ ] All decision boundary plots included
-- [ ] All training curves included
-- [ ] Confusion matrix included
-- [ ] Ablation results in table
-- [ ] 95% CI shown
-
-### Format
-- [ ] PDF format
-- [ ] 6-8 pages
-- [ ] High-quality figures
-- [ ] Properly formatted tables
-
-## Presentation Checklist
-
-When preparing the presentation, pay attention to the following.
-
-### Content
-- [ ] Problem presentation (1 min)
-- [ ] Mathematical background (2 min)
-- [ ] Implementation (2 min)
-- [ ] Experimental results (3 min)
-- [ ] Analysis and conclusion (2 min)
-- [ ] Every team member speaks
-
-### Technical
-- [ ] Slides in PDF format
-- [ ] Figures are clear
-- [ ] Mathematical formulas are correct
-- [ ] Within 10 minute time limit
-- [ ] 5 additional minutes for Q&A planned
-
-### Preparation
-- [ ] Rehearsals conducted
-- [ ] Technical questions prepared
-- [ ] Time management practiced
-
-## Final Submission Checklist
-
-Before final submission, verify the following.
-
-### Repository
-- [ ] All code pushed
-- [ ] Meaningful commit history
-- [ ] Each team member has at least one merged branch
-- [ ] README properly filled
-- [ ] Results (figures, results) in repo
-
-### Code Quality
-- [ ] Code follows PEP8 standards
-- [ ] Docstrings present
-- [ ] No hardcoded secrets
-- [ ] All sanity checks pass
-
-### Documentation
-- [ ] README includes setup instructions
-- [ ] Report in PDF format
-- [ ] Slides in PDF format
-
----
-
-# 14. Submission Requirements
-
-## GitHub Repository
-
-**Requirements:**
-- Meaningful commit history (each commit should be descriptive)
-- Must contain all code and results
-- README.md must be properly filled
-
-**Recommended branch structure:**
-```
-main (merged code)
-├── feature/softmax-implementation
-├── feature/neural-network
-├── feature/experiments
-└── feature/report
-```
-
-## PDF Report (6-8 pages)
-
-**Structure:**
-1. **Introduction:** Problem description and motivation
-2. **Methodology:** Model architectures and experimental design
-3. **Mathematical Analysis:** Derivatives and formulas
-4. **Results:** Graphs and tables
-5. **Analysis:** Interpretation of findings
-6. **Limitations:** Potential problems
-7. **Conclusion:** Main takeaways
-
-## Presentation (10 min + 5 min Q&A)
-
-**Structure:**
-1. Problem presentation (1 min)
-2. Mathematical background (2 min)
-3. Implementation (2 min)
-4. Experimental results (3 min)
-5. Analysis and conclusion (2 min)
-
-**Important:** Every team member must speak!
-
----
-
-# 15. Frequently Asked Questions
+# 14. Frequently Asked Questions
 
 ## Q: Which track should I choose?
 
-**A:** You must choose only one track:
 - **Track A (PCA/SVD):** If you are interested in mathematical PCA analysis
 - **Track B (Confidence):** If you are interested in model calibration and reliability
 
@@ -1184,57 +1053,6 @@ If training accuracy increases but validation accuracy decreases, this indicates
 2. **Probability Sum Check:** Softmax outputs should sum to 1. If not, there is numerical instability.
 
 3. **NaN/Inf Check:** No NaN or Inf in model outputs. This indicates gradient explosion or other problems.
-
----
-
-## Q: Does everyone do the same experiments?
-
-**A:** Yes, core experiments are the same for everyone, but:
-
-**Common (for everyone):**
-- Linear Gaussian, Moons, Digits experiments
-- Capacity and optimizer ablations
-- Failure case analysis
-
-**Different:**
-- **Advanced track choice:** You choose only one of Track A or Track B
-- **Report interpretation:** Same results can be explained differently
-- **Presentation emphasis:** Different teams may focus on different aspects
-
----
-
-# 16. Grading Criteria
-
-| Category | Weight | Description |
-|----------|--------|-------------|
-| Mathematical Understanding | 20% | Correctness of derivations |
-| Implementation | 16% | Code correctness |
-| Experimental Design | 18% | Experiment planning |
-| Analysis | 18% | Result interpretation |
-| Report | 10% | Written report |
-| Presentation | 10% | Delivery skills |
-| Repository | 8% | Code organization |
-
----
-
-## License
-
-Developed by **National AI Center - AI Academy**
-
----
-
-<div align="center">
-
-**This project combines fundamental principles of mathematical learning with practical implementation.**
-
-**By completing this project, you will:**
-- Understand the difference between linear and non-linear classification
-- Implement a neural network from scratch
-- Gain research methodology skills
-
-</div>
-
----
 
 ---
 
@@ -2108,8 +1926,6 @@ Sistemi quraşdırarkən aşağıdakı addımları izləyin.
 
 ## İmplementasiya Yoxlaması
 
-Kod yazarkən aşağıdakılara diqqət edin.
-
 ### Softmax Regression
 - [ ] `forward()` metodu düzgün softmax hesablayır
 - [ ] `backward()` metodu düzgün gradient hesablayır
@@ -2140,8 +1956,6 @@ Kod yazarkən aşağıdakılara diqqət edin.
 
 ## Eksperiment Yoxlaması
 
-Hər eksperiment üçün aşağıdakıları yoxlayın.
-
 ### Linear Gaussian
 - [ ] Decision boundary plot hazırlanıb
 - [ ] Hər iki model train olunub
@@ -2171,136 +1985,13 @@ Hər eksperiment üçün aşağıdakıları yoxlayın.
 ### Failure Case Analysis
 - [ ] Bir uğursuzluq halı təhlil olunub
 - [ ] Səbəb izah olunub
-- [ ] Dərslər çıxarılıb
+- [ ] Qərar çıxarılmışdır
 
-## Report Yoxlaması
+# 14. Tez-tez Verilən Suallar
 
-Hesabat yazarkən aşağıdakılara diqqət edin.
+## S: Hansı track-i seçildi?
 
-### Ümumi Struktur
-- [ ] Giriş bölməsi yazılıb
-- [ ] Metodologiya bölməsi yazılıb
-- [ ] Riyazi analiz bölməsi yazılıb
-- [ ] Nəticələr bölməsi yazılıb
-- [ ] Təhlil bölməsi yazılıb
-- [ ] Məhdudiyyətlər bölməsi yazılıb
-- [ ] Nəticə bölməsi yazılıb
 
-### Riyazi Analiz
-- [ ] Softmax derivative yazılıb
-- [ ] Cross-entropy derivative yazılıb
-- [ ] Backpropagation törəmələri yazılıb
-- [ ] Tanh derivative yazılıb
-- [ ] L2 regularization törəməsi yazılıb
-
-### Nəticələr
-- [ ] Bütün decision boundary qrafikləri əlavə olunub
-- [ ] Bütün training curves qrafikləri əlavə olunub
-- [ ] Confusion matrix əlavə olunub
-- [ ] Ablasiya nəticələri cədvəldə göstərilib
-- [ ] 95% CI göstərilib
-
-### Format
-- [ ] PDF formatda hazırlanıb
-- [ ] 6-8 səhifədir
-- [ ] Şəkillər keyfiyyətli çap olunur
-- [ ] Rəqəmlər düzgün formatlaşdırılıb
-
-## Prezentasiya Yoxlaması
-
-Təqdimat hazırlayarkən aşağıdakılara diqqət edin.
-
-### Məzmun
-- [ ] Problemin təqdimatı (1 dəqiqə)
-- [ ] Riyazi fond (2 dəqiqə)
-- [ ] İmplementasiya (2 dəqiqə)
-- [ ] Eksperimental nəticələr (3 dəqiqə)
-- [ ] Təhlil və yekun (2 dəqiqə)
-- [ ] Hər komanda üzvü danışır
-
-### Texniki
-- [ ] Slides PDF formatdadır
-- [ ] Qrafiklər aydın görünür
-- [ ] Riyazi düsturlar düzgündür
-- [ ] Çıxış vaxtı 10 dəqiqədən az deyil
-- [ ] Q&A üçün əlavə 5 dəqiqə planlaşdırılıb
-
-### Hazırlıq
-- [ ] Rehearsals edilıb
-- [ ] Texniki suallara hazırlıq görülüb
-- [ ] Vaxt idarəolunması planlaşdırılıb
-
-## Son Yoxlama
-
-Təqdimatdan əvvəl aşağıdakıları yoxlayın.
-
-### Repository
-- [ ] Bütün kod push olunub
-- [ ] Mənalı commit tarixçəsi var
-- [ ] Hər komanda üzvünün ən azı bir branch-i merge olunub
-- [ ] README tam doldurulub
-- [ ] Nəticələr (figures, results) repo-da var
-
-### Code Quality
-- [ ] Kod PEP8 standartlarına uyğundur
-- [ ] Şərhlər (doc strings) var
-- [ ] Heç bir hardcoded secrets yoxdur
-- [ ] Bütün sanity checks uğurla keçir
-
-### Documentation
-- [ ] README quraşdırma təlimatlarını ehtiva edir
-- [ ] Report PDF formatdadır
-- [ ] Slides PDF formatdadır
-
----
-
-# 14. Təqdimat Tələbləri
-
-## GitHub Repository
-
-**Tələblər:**
-- Mənalı commit tarixçəsi (hər commit izahedici olmalıdır)
-- Bütün kodu və nəticələri ehtiva etməlidir
-- README.md düzgün doldurulmalıdır
-
-**Tövsiyə olunan branch strukturu:**
-```
-main (birləşdirilmiş kod)
-├── feature/softmax-implementation
-├── feature/neural-network
-├── feature/experiments
-└── feature/report
-```
-
-## PDF Hesabat (6-8 səhifə)
-
-**Struktur:**
-1. **Giriş:** Problemin təsviri və motivasiya
-2. **Metodologiya:** Model arxitekturaları və eksperimental dizayn
-3. **Riyazi Analiz:** Törəmələr və düsturlar
-4. **Nəticələr:** Qrafiklər və cədvəllər
-5. **Təhlil:** Tapıntıların interpretasiyası
-6. **Məhdudiyyətlər:** Potensial problemlər
-7. **Nəticə:** Əsas yekunlar
-
-## Prezentasiya (10 dəq + 5 dəq Q&A)
-
-**Struktur:**
-1. Problemin təqdimatı (1 dəq)
-2. Riyazi fond (2 dəq)
-3. İmplementasiya (2 dəq)
-4. Eksperimental nəticələr (3 dəq)
-5. Təhlil və yekun (2 dəq)
-
-**Vacib:** Hər komanda üzvü danışmalıdır!
-
----
-
-# 15. Tez-tez Verilən Suallar
-
-## S: Hansı track-i seçim?
-
-**C:** Yalnız bir track seçməlisiniz:
 - **Track A (PCA/SVD):** Əgər riyazi PCA analizi ilə maraqlanırsınızsa
 - **Track B (Confidence):** Əgər model calibration və etibarlılıq ilə maraqlanırsınızsa
 
@@ -2400,50 +2091,5 @@ Width-i {2, 4, 8, 16, 32, 64} olaraq artırın. Hər addımda accuracy-ni müşa
 3. **NaN/Inf Check:** Model çıxışlarında NaN və ya Inf yoxdur. Bu, gradient explosion və ya digər problemləri göstərir.
 
 ---
-
-## S: Hər kəs eyni eksperimentləri edir?
-
-**Cavab:** Bəli, əsas eksperimentlər hamı üçün eynidir, amma:
-
-**Ümumi olan (hamı üçün):**
-- Linear Gaussian, Moons, Digits eksperimentləri
-- Capacity və optimizer ablasiyaları
-- Uğursuzluq halı təhlili
-
-**Fərqli olan:**
-- **Advanced track seçimi:** Track A və ya Track B-dən yalnız birini seçirsiniz
-- **Report interpretasiyası:** Eyni nəticələr fərqli şəkildə izah oluna bilər
-- **Prezentasiya vurğusu:** Fərqli komandalar müxtəlif aspektlərə diqqət yetirə bilər
-
----
-
-# 16. Qiymətləndirmə Meyarları
-
-| Kateqoriya | Çəki | Təsvir |
-|------------|------|--------|
-| Riyazi anlayış | 20% | Törəmələrin düzgünlüyü |
-| İmplementasiya | 16% | Kodun düzgünlüyü |
-| Eksperimental dizayn | 18% | Eksperimentlərin planlaşdırılması |
-| Təhlil | 18% | Nəticələrin interpretasiyası |
-| Report | 10% | Yazılı hesabat |
-| Prezentasiya | 10% | Çatdırılma bacarığı |
-| Repository | 8% | Kod təşkili |
-
----
-
-## Lisenziya
-
-Developed by **National AI Center - AI Academy**
-
----
-
-<div align="center">
-
-**Bu layihə riyazi öyrənmənin əsas prinsiplərini praktiki təcrübə ilə birləşdirir.**
-
-**Bu layihəni tamamlayaraq siz:**
-- Xətti və qeyri-xətti klassifikasiya arasındakı fərqi başa düşəcəksiniz
-- Sıfırdan neural şəbəkə implement edəcəksiniz
-- Elmi tədqiqat aparmaq bacarığı qazanacaqsınız
 
 </div>
