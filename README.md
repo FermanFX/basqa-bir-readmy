@@ -743,17 +743,8 @@ The 3D visualization provides additional insight into the geometric structure of
 | PC2	| 11.2%	| 29.7% | 
 | PC3	| 5.5%	| 35.2% | 
 
-Key observations from the 3D visualization:
 
-•	Digit 0 forms a tight, well-separated cluster, explaining why it is rarely misclassified (confusion matrix shows 0 has high accuracy).
-
-•	Digits 4 and 9 exhibit significant overlap in the 3D space, consistent with the confusion matrix showing these as the most commonly confused pair.
-
-•	Digit 8 shows greater spread than other digits, reflecting its higher variability in handwriting styles.
-
-•	Digits 1 and 7 appear in close proximity in PC1-PC2 space but separate along PC3, demonstrating the value of additional dimensions for discrimination.
-
-•	The 3D view reveals that digits are not linearly separable in the original pixel space, but the low-dimensional projection (35% variance explained by first 3 PCs) already captures meaningful structure that correlates with classification performance.
+**OBSERVATIONS FROM 3D VISUALIZATION CAN BE ADDED!**
 
 
 ### Track B: Prediction Confidence and Reliability
@@ -805,7 +796,7 @@ Both models demonstrate reasonable calibration, with accuracy generally increasi
 
 **Correct vs Incorrect Predictions Analysis**
 We also compared confidence and predictive entropy for correct versus incorrect predictions. Predictive entropy measures uncertainty:
-\mathrm{Entropy}=-\sum_{j=1}^{k}p_j\log{\left(p_j\right)}
+$$\text{Entropy} = -\sum_{j=1}^{k} p_j \log(p_j)$$
 Lower entropy indicates higher certainty, while higher entropy reflects greater uncertainty.
 
 Table 11: Correct vs Incorrect Predictions
