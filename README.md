@@ -752,7 +752,7 @@ We analyzed the calibration of both models on the digits test set by binning pre
 **Confidence Calibration**
 We divided predictions into 5 equally spaced confidence bins ( (0,0.2], (0.2,0.4], (0.4,0.6], (0.6,0.8], (0.8,1.0] ) and computed the mean confidence and empirical accuracy within each bin.
 
-Table 9: Softmax Calibration
+**Table 9.1: Softmax Calibration**
 | Bin	| Confidence Range	| Mean Confidence	| Accuracy	| Count |
 | - | - | - | - | - |
 | 1	| (0.0, 0.2] | | | 			0 | 
@@ -766,7 +766,7 @@ Table 9: Softmax Calibration
 <img width="1009" height="697" alt="image" src="https://github.com/user-attachments/assets/5e9c6ef1-028f-4e36-a521-ad35c1641e92" />
 
 
-Table 10: Neural Network Calibration
+**Table 10: Neural Network Calibration**
 | Bin	| Confidence Range	| Mean Confidence	| Accuracy	| Count |
 | - | - | - | - | - |
 | 1	| (0.0, 0.2]	| | | 		0 | 
@@ -797,7 +797,7 @@ We also compared confidence and predictive entropy for correct versus incorrect 
 $$\text{Entropy} = -\sum_{j=1}^{k} p_j \log(p_j)$$
 Lower entropy indicates higher certainty, while higher entropy reflects greater uncertainty.
 
-Table 11: Correct vs Incorrect Predictions
+**Table 11: Correct vs Incorrect Predictions**
 | Model	| Correct Predictions	| Incorrect Predictions| 
 | -| -| -|
 | Softmax	| Mean Confidence: 0.8683, Mean Entropy: 0.4784	| Mean Confidence: 0.4944, Mean Entropy: 1.3354| 
