@@ -238,10 +238,12 @@ Input (x) ──────► Linear Transform (Wx + b) ──────► 
 $$\hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o}) \quad \text{where} \quad \hat{y}_i = \frac{\exp(o_i)}{\sum_j \exp(o_j)}$$
 
 **The Forward Pass Equation:**
-$$\mathbf{O} = \mathbf{X} \mathbf{W} + \mathbf{b}$$
+$$\mathbf{O} = \mathbf{X}\mathbf{W} + \mathbf{b}$$
 $$\hat{\mathbf{Y}} = \mathrm{softmax}(\mathbf{O})$$
 
 ---
+
+https://sebastianraschka.com/images/faq/softmax_regression/1.png
 
 
 
