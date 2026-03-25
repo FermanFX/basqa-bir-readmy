@@ -645,6 +645,7 @@ We trained neural networks with hidden widths h ∈ {2, 8, 32} on the moons data
 
 
 With h = 2, the network achieves validation loss of 0.230, comparable to the linear baseline, indicating insufficient capacity. At h = 8, validation loss drops significantly to 0.159, and test accuracy reaches 95%. At h = 32, validation loss is 0.163 with 93.75% test accuracy. The reason for test accuracy being maximum at h=8 could be the fact that we got lucky, for given seed, the splitting might be not random. Another reason could be that NN with h=8 learns optimum separation boundary for this given dataset, better generalization always gives better results.
+
 Interpretation: Increasing hidden width increases the model's capacity to represent nonlinear functions. Increasing hidden width from 2 to 8 dramatically improves performance, demonstrating that sufficient capacity is necessary to capture the moon geometry. Further increasing to 32 yields diminishing returns, suggesting that h = 8 provides adequate representational power for this task. For this task, h = 2 underfits, h = 32 achieves near-optimal performance, and h = 8 represents a trade-off between complexity and accuracy. With h=2, since softmax also did well, it means that the data is linearly separable, that’s why the h=2 NN decreased quickly than the others, because for that given depth, there is not much to learn since linear softmax also did well.
 
 
@@ -662,6 +663,7 @@ We compared three optimizers on the neural network with fixed hyperparameters (l
 | Adam	| 0.9690	| Medium | 
 
 Both Momentum and Adam achieved 96.90% validation accuracy, outperforming standard SGD (96.34%). Momentum and Adam converged faster and reached slightly higher final performance.
+
 Interpretation: Momentum improves upon SGD by accumulating past gradients to dampen oscillations, leading to faster convergence. Adam combines momentum with adaptive learning rates, providing efficient optimization. Both achieve comparable final performance on this task. (Can be added: the limitations of momentum and adam)
 
 
@@ -682,6 +684,7 @@ s = w₂h + b₂
 This reduces to a linear classifier after the tanh nonlinearity, since h is a scalar and the composition w₂ tanh(w₁x + b₁) + b₂ cannot represent arbitrary curves. The model's effective capacity is comparable to, or even less than, a linear classifier. Can be added: Mathematical complexity introduced by tanh and comparison to linearity, mathematically.
 The decision boundary remains nearly linear. This demonstrates that sufficient hidden width is necessary for the network to represent the nonlinear moon geometry.
 With a single hidden unit, the network's performance (85.0% accuracy) is identical to the linear softmax baseline (85.0%). The model cannot represent the nonlinear moon geometry, as a single tanh unit followed by a linear output reduces to an effectively linear classifier.
+
 Interpretation: This failure case demonstrates that capacity matters. When hidden width is insufficient (h = 1), the network lacks the representational power to learn curved decision boundaries, performing no better than a linear model. Sufficient hidden units (h ≥ 8) are required to capture the nonlinear structure.
 
 
@@ -719,6 +722,7 @@ Overall, the picture shows the visualization of high dimensional data compressed
 
 
 Reducing dimensions from 64 to 40 preserves 99.4% of the original classification accuracy (93.21% vs 93.75%). Further reduction to 20 dimensions yields 92.66% accuracy, while 10 dimensions captures 89.95% of the performance.
+
 Interpretation: The digits data exhibits low-dimensional structure. The first 20 principal components capture most of the discriminative information, with diminishing returns beyond 40 dimensions. This aligns with the scree plot showing an "elbow" around 10-20 components, indicating that the effective dimensionality of the digit classification task is substantially lower than the original 64 pixels.
 
 
@@ -811,6 +815,7 @@ Table 11: Correct vs Incorrect Predictions
 | Neural Network	| Mean Confidence: 0.9515, Mean Entropy: 0.1797	| Mean Confidence: 0.5744, Mean Entropy: 1.0254| 
 
 Both models show clear separation between correct and incorrect predictions, but the neural network demonstrates superior uncertainty representation:
+
 - Softmax: Correct predictions have high confidence (0.868) and low entropy (0.478); incorrect predictions have much lower confidence (0.494) and higher entropy (1.335). The entropy gap (0.857) indicates the model distinguishes certainty from uncertainty reasonably well.
 
 - Neural Network: The gap between correct and incorrect predictions is substantially larger. Correct predictions exhibit very high confidence (0.952) and very low entropy (0.180); incorrect predictions show moderate confidence (0.574) and elevated entropy (1.025). The entropy gap (0.846) is comparable to Softmax, but both confidence and entropy values are more extreme.
