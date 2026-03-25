@@ -580,6 +580,7 @@ Interpretation: The linear model is geometrically sufficient for this task. The 
 
 ### Moons Task
 This synthetic dataset consists of two interleaving half-circles, representing a nonlinearly separable classification problem.
+
 **Table 3: Moons Results**
 | Model  | Test Accuracy | Test Loss |
 | ------ | ------------ | ------- |
