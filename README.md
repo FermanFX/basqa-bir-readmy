@@ -695,13 +695,17 @@ The scree plot shows the first 20 eigenvalues, with a clear elbow around 10-15 c
 
 The 2D projection reveals clustering structure. Let’s look at it in more detail. But before, let’s build logical framework:
 If two clusters are close to each other, it means that the model “thinks” they are similar. Similarly, if the clusters are far away from each other, the model “thinks” that they are completely different. If the clusters seem mixed, in that case, the model “thinks” that those clusters are very similar.
+
 For example, 3 and 8 are quite similar. Looking at the graph, it can be seen that the model also captured that, right side of the graph (red dots are 3) and the right-upper side of the graph (open green-ish and yellow-ish dots are 8). Additionally, ut can be seen that, clusters representing the numbers 3 and 9 are close to each other than 3 and 8. Most possibly, it is because of the fact that 8 has extra curve on its bottom left, and that in turn, introduces additional distance in decision boundary.
+
 The left side of the graph mainly shows the number 6. There is possibly a reason for that. Since the graph shows two principal components of the data, there is a high possibility that the number 6 was represented differently by various samples, therefore increasing the variance of that particular label. In addition, the mid-bottom side of the graph represents the number 0, which is “somewhat” close to 6. Visually, it can be seen because of one additional line on the number 6 (0 -> 6).
+
 The number 2 on the graph (green area), has remarkable difference, and also, pretty mixed with other labels, and close to number 3, number 7, and number 8 on the graph. Closeness with number 3 and number 7 can be explained as the similar lines and one replaced line on number 3 (2 -> 3), number 7 (2 -> 7), and number 8 (2 -> 8). Difference can be thought as the number 2 does not have an alternative that could possibly be confused. Similarity with different numbers is the cause of the overlap on the picture. The same can be said for number 1 (uniqueness, and similarity).
+
 Overall, the picture shows the visualization of high dimensional data compressed into 2 dimensional space. The numbers that are similar to each other appear close in distance, and additionally, the numbers also can be distinguished if looked properly, because that many labels will have an effect on the final version of the compressed data, by the means of variance.
 
 
-Table 9: Classification at Reduced PCA Dimensions
+**Table 9: Classification at Reduced PCA Dimensions**
 | PCA Dimensions | 	Test Accuracy (Softmax)	| Test Loss |
 | - | - | - |
 | 10	| 0.8995	| 0.3586 |
@@ -732,10 +736,15 @@ The 3D visualization provides additional insight into the geometric structure of
 | PC3	| 5.5%	| 35.2% | 
 
 Key observations from the 3D visualization:
+
 •	Digit 0 forms a tight, well-separated cluster, explaining why it is rarely misclassified (confusion matrix shows 0 has high accuracy).
+
 •	Digits 4 and 9 exhibit significant overlap in the 3D space, consistent with the confusion matrix showing these as the most commonly confused pair.
+
 •	Digit 8 shows greater spread than other digits, reflecting its higher variability in handwriting styles.
+
 •	Digits 1 and 7 appear in close proximity in PC1-PC2 space but separate along PC3, demonstrating the value of additional dimensions for discrimination.
+
 •	The 3D view reveals that digits are not linearly separable in the original pixel space, but the low-dimensional projection (35% variance explained by first 3 PCs) already captures meaningful structure that correlates with classification performance.
 
 
@@ -744,16 +753,16 @@ Key observations from the 3D visualization:
 We analyzed the calibration of both models on the digits test set by binning predictions by confidence (max predicted probability) and computing empirical accuracy within each bin. The analysis used the fixed digits benchmark with the test set containing 368 samples.
 
 **Confidence Calibration**
-We divided predictions into 5 equally spaced confidence bins \left(\left[0,0.2\right],\left(0.2,0.4\right],\left(0.4,0.6\right],\left(0.6,0.8\right],\left(0.8,1.0\right]\right) and computed the mean confidence and empirical accuracy within each bin.
+We divided predictions into 5 equally spaced confidence bins ( (0,0.2], (0.2,0.4], (0.4,0.6], (0.6,0.8], (0.8,1.0] ) and computed the mean confidence and empirical accuracy within each bin.
 
 Table 9: Softmax Calibration
 | Bin	| Confidence Range	| Mean Confidence	| Accuracy	| Count |
 | - | - | - | - | - |
 | 1	| (0.0, 0.2] | | | 			0 | 
-| 2	| (0.2, 0.4]	| 0.3334	| 0.3333 	| 12
-| 3	| (0.4, 0.6]	| 0.5148	| 0.7838 	| 37
-| 4	| (0.6, 0.8]	| 0.7110	| 0.8800 	| 50
-| 5	| (0.8, 1.0]	| 0.9380	| 0.9963 	| 269
+| 2	| (0.2, 0.4]	| 0.3334	| 0.3333 	| 12| 
+| 3	| (0.4, 0.6]	| 0.5148	| 0.7838 	| 37| 
+| 4	| (0.6, 0.8]	| 0.7110	| 0.8800 	| 50| 
+| 5	| (0.8, 1.0]	| 0.9380	| 0.9963 	| 269| 
 
 *Note: No predictions fell in bin 1 (0.0–0.2] for Softmax.*
 
@@ -778,8 +787,11 @@ Table 10: Neural Network Calibration
 
 **Interpretation**
 Both models demonstrate reasonable calibration, with accuracy generally increasing with confidence. Key observations:
+
 - Low-confidence region (bins 2–3): Softmax shows better calibration with accuracy (0.333, 0.784) closely matching mean confidence (0.333, 0.515). The neural network shows poor calibration in low-confidence regions—all 1 prediction in bin 2 was incorrect, and only 33% accuracy in bin 3 versus 50% confidence—but these bins contain very few samples (1 and 21 respectively), limiting statistical significance.
+
 - High-confidence region (bins 4–5): Both models are well-calibrated. Softmax achieves 88.0% accuracy at 71.1% confidence and 99.6% accuracy at 93.8% confidence. The neural network achieves 78.9% accuracy at 71.1% confidence and 99.1% accuracy at 97.1% confidence.
+
 - Distribution: The neural network concentrates predictions in the highest confidence bin (327 samples, 88.9% of test set) compared to Softmax (269 samples, 73.1% of test set). This reflects the neural network's higher overall confidence and accuracy.
 
 
@@ -796,7 +808,9 @@ Table 11: Correct vs Incorrect Predictions
 
 Both models show clear separation between correct and incorrect predictions, but the neural network demonstrates superior uncertainty representation:
 - Softmax: Correct predictions have high confidence (0.868) and low entropy (0.478); incorrect predictions have much lower confidence (0.494) and higher entropy (1.335). The entropy gap (0.857) indicates the model distinguishes certainty from uncertainty reasonably well.
+
 - Neural Network: The gap between correct and incorrect predictions is substantially larger. Correct predictions exhibit very high confidence (0.952) and very low entropy (0.180); incorrect predictions show moderate confidence (0.574) and elevated entropy (1.025). The entropy gap (0.846) is comparable to Softmax, but both confidence and entropy values are more extreme.
+
 - Comparison: The neural network achieves 8.3 percentage points higher confidence on correct predictions (95.2% vs 86.8%) and 8.0 percentage points higher confidence on incorrect predictions (57.4% vs 49.4%). While the neural network's incorrect predictions have higher confidence, its correct predictions are much more confident, and its entropy for correct predictions is 2.7× lower (0.180 vs 0.478).
 
 Conclusion: The neural network produces more confident correct predictions and lower uncertainty on those predictions compared to Softmax. While both models are reasonably well-calibrated in high-confidence regions, the neural network concentrates more predictions in the highest confidence bin and achieves slightly better overall accuracy. This suggests that the additional hidden layer not only improves classification performance but also enhances the model's ability to produce reliable probability estimates, particularly for samples it classifies correctly.
@@ -988,100 +1002,9 @@ $$\frac{\partial L_{total}}{\partial W} = \frac{\partial L_{CE}}{\partial W} + \
 
 This creates a "weight decay" effect - pulls weights toward zero.
 
----
-
-# 10. Graphics and Visualization
-
-## Decision Boundary Plot
-
-This plot visualizes the boundary learned by the model.
-
-**How it works:**
-1. Create a 200×200 = 40,000 point grid
-2. Predict class for each point
-3. Color points by class
-
-**Interpretation:**
-- **Linear boundary:** Characteristic of Softmax
-- **Curved boundary:** Characteristic of NN
-
-## Training Dynamics Plot
-
-Changes in loss and accuracy over epochs.
-
-**How to read:**
-- Train and validation curves should be close
-- If train decreases but validation increases → overfitting
-- If both are high → underfitting
-
-## Confusion Matrix
-
-Number of correct and incorrect predictions for each class.
-
-**Interpretation:**
-- Diagonal: Correct predictions
-- Off-diagonal: Confused classes
-
-## Confidence vs Accuracy Plot (Track B)
-
-Checks the model's self-confidence level.
-
-**Good calibration:** If model is 80% confident, it should be 80% accurate.
 
 ---
 
-# 11. Evaluation Protocols
-
-## Sanity Checks
-
-### 1. Gradient Check
-
-Compares analytical gradients with numerical gradients:
-
-```python
-def gradient_check(model, X, Y, epsilon=1e-5):
-    analytical_grad = model.backward(X, Y, cache)
-    numerical_grad = compute_numerical_grad(model, X, Y, epsilon)
-    
-    relative_error = |analytical - numerical| / (|analytical| + |numerical|)
-    return relative_error < 1e-5
-```
-
-### 2. Probability Sum Check
-
-Verifies that softmax outputs sum to one:
-
-```python
-def check_probability_sum(P):
-    sums = np.sum(P, axis=1)
-    return np.allclose(sums, 1.0)
-```
-
-### 3. NaN/Inf Check
-
-No NaN or Inf in model outputs:
-
-```python
-def check_nan_inf(model, X):
-    cache = model.forward(X)
-    return not (np.any(np.isnan(cache)) or np.any(np.isinf(cache)))
-```
-
-## Repeated Seed Evaluation
-
-Repeated evaluation with 5 different seeds to ensure statistical significance:
-
-**Protocol:**
-1. For each seed, train model from scratch
-2. Record test accuracy and loss
-3. Calculate mean and standard deviation
-
-**95% Confidence Interval:**
-$$CI = \mu \pm t_{0.975, n-1} \cdot \frac{\sigma}{\sqrt{n}}$$
-
-Where $t_{0.975, 4} = 2.776$ (t-critical value for n=5).
-
----
 
 # 12. Team and Responsibilities
 
