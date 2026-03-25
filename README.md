@@ -20,10 +20,9 @@
 7. [Data](#7-data)
 8. [Implementation Sanity Checks, Experiments and Results](#8-implementation-sanity-checks-experiments-and-results)
 9. [Mathematical Analysis and Derivatives](#9-mathematical-analysis-and-derivatives)
-10. [Evaluation Protocols](#10-evaluation-protocols)
-11. [Team and Responsibilities](#11-team-and-responsibilities)
-12. [Comprehensive Checklists](#12-comprehensive-checklists)
-13. [Questions That Might Help](#13-questions-that-might-help)
+10. [Team and Responsibilities](#11-team-and-responsibilities)
+11. [Comprehensive Checklists](#12-comprehensive-checklists)
+12. [Questions That Might Help](#13-questions-that-might-help)
 
 ---
 
@@ -451,7 +450,7 @@ class Evaluator:
 
 ---
 
-# 7. Datasets and Data
+# 7. Data
 
 ## Linear Gaussian Dataset
 
@@ -1005,7 +1004,7 @@ This creates a "weight decay" effect - pulls weights toward zero.
 ---
 
 
-# 12. Team and Responsibilities
+# 10. Team and Responsibilities
 
 This project is executed as a team. Below are the team members and their areas of responsibility.
 
@@ -1048,7 +1047,7 @@ main (production branch)
 
 ---
 
-# 13. Comprehensive Checklists
+# 11. Comprehensive Checklists
 
 ## Starter Pack Integrity Check
 
@@ -1138,7 +1137,7 @@ Follow these steps when setting up the system.
 - [ ] Results drawn
 
 
-# 14. Questions That Might Help
+# 12. Questions That Might Help
 
 ---
 
