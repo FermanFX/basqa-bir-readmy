@@ -823,6 +823,7 @@ Conclusion: The neural network produces more confident correct predictions and l
 
 Both models achieved identical accuracy (95.0%), with Softmax achieving slightly lower loss. The Gaussian blobs are linearly separable, and the hidden layer provides no measurable benefit. This demonstrates that additional complexity does not automatically improve performance—when the underlying geometry is linear, a linear classifier is optimal.
 
+---
 
 **2. Moons: Neural Network Significantly Outperforms Linear Model**
 | Model	| Test Accuracy	| Test Loss|
@@ -832,6 +833,7 @@ Both models achieved identical accuracy (95.0%), with Softmax achieving slightly
 
 The neural network achieves 8.75% higher accuracy and substantially lower loss. The interleaving moon-shaped geometry requires a nonlinear decision boundary, which the hidden layer can learn through composition of affine transformations and tanh activations. This confirms that nonlinear models are necessary when data exhibits curved class boundaries.
 
+---
 
 **3. Digits: Neural Network Shows Modest but Significant Improvement**
 | Model	| Mean Accuracy (5 seeds)	| 95% CI	| Mean Loss (5 seeds)	| 95% CI| 
@@ -841,6 +843,7 @@ The neural network achieves 8.75% higher accuracy and substantially lower loss. 
 
 The neural network achieves 1.5% higher mean accuracy with non-overlapping confidence intervals, indicating a statistically significant improvement. The loss difference is more pronounced (0.1657 vs 0.2695), reflecting better-calibrated probabilities. While digit classification benefits from nonlinear feature combinations, the linear model already captures much of the structure—digits are reasonably well-separated in pixel space.
 
+---
 
 **4. Capacity Matters: Hidden Width Governs Representational Power**
 | Hidden Width	| Final Validation Loss	| Test Accuracy| 
@@ -854,6 +857,7 @@ The neural network achieves 1.5% higher mean accuracy with non-overlapping confi
 - h = 32: Marginal additional gain (93.75% accuracy). Diminishing returns beyond h=8 (for this task).
 This demonstrates that capacity must match task complexity—too little leads to underfitting, while excessive capacity yields diminishing returns.
 
+---
 
 **5. Optimizer Choice Affects Convergence Speed**
 | Optimizer	| Final Validation | Accuracy
@@ -864,6 +868,7 @@ This demonstrates that capacity must match task complexity—too little leads to
 
 Both Momentum and Adam outperform standard SGD, achieving 0.56% higher validation accuracy. Momentum dampens oscillations through velocity accumulation, while Adam combines momentum with per-parameter adaptive learning rates. All three converge to similar final performance, but Momentum and Adam reach peak accuracy faster.
 
+---
 
 **6. PCA Reveals Low-Dimensional Structure in Digits**
 | PCA Dimensions	| Test Accuracy (Softmax)| 
@@ -875,6 +880,7 @@ Both Momentum and Adam outperform standard SGD, achieving 0.56% higher validatio
 
 Reducing dimensions from 64 to 40 preserves 99.4% of original accuracy. The scree plot shows an "elbow" around 10–20 components, indicating that the effective dimensionality of digit classification is substantially lower than the original pixel space. This explains why a linear model performs reasonably well—the data lies near a low-dimensional linear subspace.
 
+---
 
 **7. Neural Network Produces Better-Calibrated Probabilities**
 | Metric	| Softmax	| Neural Network (h=32)| 
@@ -886,6 +892,7 @@ Reducing dimensions from 64 to 40 preserves 99.4% of original accuracy. The scre
 
 The neural network produces more confident correct predictions (95.2% vs 86.8%) and lower uncertainty (entropy 0.180 vs 0.478). Both models show clear separation between correct and incorrect predictions, but the neural network's gap is larger. Additionally, 88.9% of neural network predictions fall in the highest confidence bin (0.8–1.0) compared to 73.1% for Softmax, with near-perfect accuracy (99.1% vs 99.6%) in that bin.
 
+---
 
 **Central Question: When Does a Nonlinear Classifier Improve on a Linear Rule?**
 Based on our experiments, we can answer the central question of this capstone:
@@ -895,6 +902,7 @@ Based on our experiments, we can answer the central question of this capstone:
 | Moons	| ✗ No	| ✓ Yes	| Curved boundaries require nonlinear representation| 
 | Digits	| Partially	| ✓ Yes (modest)	| Data is approximately low-rank; linear model captures most structure, but nonlinearity provides marginal improvement| 
 
+---
 
 ### Conclusion
 Additional model complexity is justified only when the underlying data geometry is nonlinear. For linearly separable tasks, the neural network adds no benefit. For tasks with curved decision boundaries, the hidden layer enables the model to learn appropriate nonlinear representations. On the digits benchmark—a real-world task—the neural network achieves modest but statistically significant improvement, demonstrating that real data often contains nonlinear structure that linear models cannot fully capture. However, the improvement is modest because the digits data is approximately low-dimensional and reasonably well-separated in pixel space, as confirmed by PCA analysis.
