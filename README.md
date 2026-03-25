@@ -578,11 +578,6 @@ Interpretation: The linear model is geometrically sufficient for this task. The 
 ### Moons Task
 This synthetic dataset consists of two interleaving half-circles, representing a nonlinearly separable classification problem.
 **Table 3: Moons Results**
-
-Model	Test Accuracy	Test Loss
-Softmax Regression	0.8500	0.2853
-Neural Network (h=32)	0.9375	0.1898
-
 | Model  | Test Accuracy | Test Loss |
 | ------ | ------------ | ------- |
 | Softmax Regression | 0.8500  | 0.2853      |
@@ -604,15 +599,17 @@ We evaluated both models on the fixed digits dataset with 64-dimensional pixel f
 <img width="1009" height="572" alt="image" src="https://github.com/user-attachments/assets/d56365e4-9412-479f-a3da-428bc7837910" />
 
  
-Table 4: Digits Benchmark Results (Single Run, fixed seed)
-Model	Test Accuracy	Test Loss
-Softmax Regression	0.9375	0.2698
-Neural Network (h=32)	0.9402	0.1741
+**Table 4: Digits Benchmark Results (Single Run, fixed seed)**
+| Model | Test Accuracy | Test Loss |
+| - | - | - |
+| Softmax Regression | 0.9375 | 0.2698 |
+| Neural Network (h=32) | 0.9402 | 0.1741 |
 
-Table 5: Digits Benchmark Results (5 Seeds)
-Model	Mean Accuracy	95% CI	Mean Loss	95% CI
-Softmax Regression	0.9380	[0.936, 0.940]	0.2695	[0.269, 0.270]
-Neural Network (h=32)	0.9533	[0.950, 0.956]	0.1657	[0.161, 0.171]
+**Table 5: Digits Benchmark Results (5 Seeds)**
+| Model |	Mean Accuracy |	95% CI |	Mean Loss |	95% CI |
+| - | - | - | - | - |
+| Softmax Regression |	0.9380 |	[0.936, 0.940] |	0.2695 |	[0.269, 0.270] |
+| Neural Network (h=32) |	0.9533 |	[0.950, 0.956] |	0.1657 |	[0.161, 0.171] |
 
 <img width="1009" height="914" alt="image" src="https://github.com/user-attachments/assets/a9c73431-32e7-477d-abd0-e4efad7366c8" />
 
@@ -629,12 +626,12 @@ Interpretation: On the digits benchmark, the neural network demonstrates a modes
 ### Capacity Ablation (Moons Task)
 We trained neural networks with hidden widths h ∈ {2, 8, 32} on the moons dataset to investigate how representational capacity affects the learned decision boundary.
 
-Table 6: Capacity Ablation Results
-
-Hidden Width	Final Validation Loss	Test Accuracy
-2	0.22995	0.85
-8	0.15884	0.95
-32	0.16292	0.9375
+**Table 6: Capacity Ablation Results**
+| Hidden Width |	Final Validation Loss |	Test Accuracy |
+| - | - | - |
+| 2 |	0.22995 |	0.85 |
+| 8 |	0.15884 |	0.95 |
+| 32 |	0.16292 |	0.9375 |
 
 
 <img width="1009" height="334" alt="image" src="https://github.com/user-attachments/assets/8bccd6e6-f2a0-4f93-afa6-ad3a7bf50f3d" />
@@ -653,12 +650,12 @@ We compared three optimizers on the neural network with fixed hyperparameters (l
 
 <img width="1009" height="1203" alt="image" src="https://github.com/user-attachments/assets/1f0c33d6-3aa3-4ed1-9c42-c349b709be45" />
 
-Table 7: Optimizer Study Results
-
-Optimizer	Final Val Accuracy	Convergence Speed
-SGD	0.9634	Slow
-Momentum	0.9690	Fast
-Adam	0.9690	Medium
+**Table 7: Optimizer Study Results**
+| Optimizer	| Final Val Accuracy	| Convergence Speed |
+| - | - | - |
+| SGD	| 0.9634	| Slow | 
+| Momentum	| 0.9690	| Fast | 
+| Adam	| 0.9690	| Medium | 
 
 Both Momentum and Adam achieved 96.90% validation accuracy, outperforming standard SGD (96.34%). Momentum and Adam converged faster and reached slightly higher final performance.
 Interpretation: Momentum improves upon SGD by accumulating past gradients to dampen oscillations, leading to faster convergence. Adam combines momentum with adaptive learning rates, providing efficient optimization. Both achieve comparable final performance on this task. (Can be added: the limitations of momentum and adam)
@@ -667,9 +664,10 @@ Interpretation: Momentum improves upon SGD by accumulating past gradients to dam
 ### Failure Case Analysis: Under-Capacity Network
 We examined a failure case where the neural network's capacity was insufficient for the task: training on moons with hidden width h = 1.
 
-Table 8: Failure Case Results (h = 1)
-Test Accuracy	Test Loss
-0.8500	0.2825
+**Table 8: Failure Case Results (h = 1)**
+| Test Accuracy	| Test Loss |
+| - | - |
+| 0.8500	| 0.2825 |
 
 
 <img width="1009" height="429" alt="image" src="https://github.com/user-attachments/assets/5f77be1e-69ac-4d51-b07c-020e125e4a6b" />
@@ -704,11 +702,12 @@ Overall, the picture shows the visualization of high dimensional data compressed
 
 
 Table 9: Classification at Reduced PCA Dimensions
-PCA Dimensions	Test Accuracy (Softmax)	Test Loss
-10	0.8995	0.3586
-20	0.9266	0.2880
-40	0.9321	0.2714
-64 (full)	0.9375	0.2698
+| PCA Dimensions | 	Test Accuracy (Softmax)	| Test Loss |
+| - | - | - |
+| 10	| 0.8995	| 0.3586 |
+| 20	| 0.9266	| 0.2880 |
+| 40	| 0.9321	| 0.2714 |
+| 64 (full)	| 0.9375	| 0.2698 |
 
 
 Reducing dimensions from 64 to 40 preserves 99.4% of the original classification accuracy (93.21% vs 93.75%). Further reduction to 20 dimensions yields 92.66% accuracy, while 10 dimensions captures 89.95% of the performance.
@@ -725,10 +724,11 @@ Interpretation: The digits data exhibits low-dimensional structure. The first 20
 
 Figure X: 3D PCA Visualization of Digits Data
 The 3D visualization provides additional insight into the geometric structure of the digits data. The first three principal components capture the following explained variance:
-Principal Component	Explained Variance	Cumulative Variance
-PC1	18.5%	18.5%
-PC2	11.2%	29.7%
-PC3	5.5%	35.2%
+| Principal Component	| Explained Variance	| Cumulative Variance | 
+| - | - | - |
+| PC1	| 18.5%	| 18.5% |
+| PC2	| 11.2%	| 29.7% | 
+| PC3	| 5.5%	| 35.2% | 
 Key observations from the 3D visualization:
 •	Digit 0 forms a tight, well-separated cluster, explaining why it is rarely misclassified (confusion matrix shows 0 has high accuracy).
 •	Digits 4 and 9 exhibit significant overlap in the 3D space, consistent with the confusion matrix showing these as the most commonly confused pair.
@@ -745,12 +745,13 @@ We analyzed the calibration of both models on the digits test set by binning pre
 We divided predictions into 5 equally spaced confidence bins \left(\left[0,0.2\right],\left(0.2,0.4\right],\left(0.4,0.6\right],\left(0.6,0.8\right],\left(0.8,1.0\right]\right) and computed the mean confidence and empirical accuracy within each bin.
 
 Table 9: Softmax Calibration
-Bin	Confidence Range	Mean Confidence	Accuracy	Count
-1	(0.0, 0.2]			0
-2	(0.2, 0.4]	0.3334	0.3333 	12
-3	(0.4, 0.6]	0.5148	0.7838 	37
-4	(0.6, 0.8]	0.7110	0.8800 	50
-5	(0.8, 1.0]	0.9380	0.9963 	269
+| Bin	| Confidence Range	| Mean Confidence	| Accuracy	| Count |
+| - | - | - | - | - |
+| 1	| (0.0, 0.2] | | | 			0 | 
+| 2	| (0.2, 0.4]	| 0.3334	| 0.3333 	| 12
+| 3	| (0.4, 0.6]	| 0.5148	| 0.7838 	| 37
+| 4	| (0.6, 0.8]	| 0.7110	| 0.8800 	| 50
+| 5	| (0.8, 1.0]	| 0.9380	| 0.9963 	| 269
 
 *Note: No predictions fell in bin 1 (0.0–0.2] for Softmax.*
 
@@ -758,12 +759,13 @@ Bin	Confidence Range	Mean Confidence	Accuracy	Count
 
 
 Table 10: Neural Network Calibration
-Bin	Confidence Range	Mean Confidence	Accuracy	Count
-1	(0.0, 0.2]			0
-2	(0.2, 0.4]	0.3776	0.0000 	1
-3	(0.4, 0.6]	0.5032	0.3333	21
-4	(0.6, 0.8]	0.7106	0.7895 	19
-5	(0.8, 1.0]	0.9707	0.9908	327
+| Bin	| Confidence Range	| Mean Confidence	| Accuracy	| Count |
+| - | - | - | - | - |
+| 1	| (0.0, 0.2]	| | | 		0 | 
+| 2	| (0.2, 0.4]	| 0.3776	|0.0000 	| 1 |
+| 3	| (0.4, 0.6]	| 0.5032	| 0.3333	| 21 | 
+| 4	| (0.6, 0.8]	| 0.7106	| 0.7895 	| 19 | 
+| 5	| (0.8, 1.0]	| 0.9707	| 0.9908	| 327 | 
 
 *Note: No predictions fell in bin 1 (0.0–0.2] for the neural network.*
 
@@ -785,13 +787,10 @@ We also compared confidence and predictive entropy for correct versus incorrect 
 Lower entropy indicates higher certainty, while higher entropy reflects greater uncertainty.
 
 Table 11: Correct vs Incorrect Predictions
-Model	Correct Predictions	Incorrect Predictions
-Softmax	Mean Confidence: 0.8683, 
-Mean Entropy: 0.4784	Mean Confidence: 0.4944, 
-Mean Entropy: 1.3354
-Neural Network	Mean Confidence: 0.9515, 
-Mean Entropy: 0.1797	Mean Confidence: 0.5744, 
-Mean Entropy: 1.0254
+| Model	| Correct Predictions	| Incorrect Predictions| 
+| -| -| -|
+| Softmax	| Mean Confidence: 0.8683, Mean Entropy: 0.4784	| Mean Confidence: 0.4944, Mean Entropy: 1.3354| 
+| Neural Network	| Mean Confidence: 0.9515, Mean Entropy: 0.1797	| Mean Confidence: 0.5744, Mean Entropy: 1.0254| 
 
 Both models show clear separation between correct and incorrect predictions, but the neural network demonstrates superior uncertainty representation:
 - Softmax: Correct predictions have high confidence (0.868) and low entropy (0.478); incorrect predictions have much lower confidence (0.494) and higher entropy (1.335). The entropy gap (0.857) indicates the model distinguishes certainty from uncertainty reasonably well.
@@ -803,33 +802,37 @@ Conclusion: The neural network produces more confident correct predictions and l
 
 ## Summary of Key Findings
 **1. Linear Gaussian: Linear Model is Sufficient**
-Model	Test Accuracy	Test Loss
-Softmax Regression	0.9500	0.1539
-Neural Network (h=8)	0.9500	0.1620
+| Model	| Test Accuracy	| Test Loss| 
+| -|- |- |
+| Softmax Regression	| 0.9500	| 0.1539| 
+| Neural Network (h=8)	| 0.9500	| 0.1620| 
 
 Both models achieved identical accuracy (95.0%), with Softmax achieving slightly lower loss. The Gaussian blobs are linearly separable, and the hidden layer provides no measurable benefit. This demonstrates that additional complexity does not automatically improve performance—when the underlying geometry is linear, a linear classifier is optimal.
 
 
 **2. Moons: Neural Network Significantly Outperforms Linear Model**
-Model	Test Accuracy	Test Loss
-Softmax Regression	0.8500	0.2853
-Neural Network (h=32)	0.9375	0.1898
+| Model	| Test Accuracy	| Test Loss|
+| -| -| -|
+| Softmax Regression	| 0.8500	| 0.2853| 
+| Neural Network (h=32)	| 0.9375	| 0.1898| 
 
 The neural network achieves 8.75% higher accuracy and substantially lower loss. The interleaving moon-shaped geometry requires a nonlinear decision boundary, which the hidden layer can learn through composition of affine transformations and tanh activations. This confirms that nonlinear models are necessary when data exhibits curved class boundaries.
 
 
 **3. Digits: Neural Network Shows Modest but Significant Improvement**
-Model	Mean Accuracy (5 seeds)	95% CI	Mean Loss (5 seeds)	95% CI
-Softmax Regression	0.9380	[0.936, 0.940]	0.2695	[0.269, 0.270]
-Neural Network (h=32)	0.9533	[0.950, 0.956]	0.1657	[0.161, 0.171]
+| Model	| Mean Accuracy (5 seeds)	| 95% CI	| Mean Loss (5 seeds)	| 95% CI| 
+| -| -| -| -| -|
+| Softmax Regression	| 0.9380	| [0.936, 0.940]	| 0.2695	| [0.269, 0.270]| 
+| Neural Network (h=32)	| 0.9533	| [0.950, 0.956]	| 0.1657	| [0.161, 0.171]| 
 
 The neural network achieves 1.5% higher mean accuracy with non-overlapping confidence intervals, indicating a statistically significant improvement. The loss difference is more pronounced (0.1657 vs 0.2695), reflecting better-calibrated probabilities. While digit classification benefits from nonlinear feature combinations, the linear model already captures much of the structure—digits are reasonably well-separated in pixel space.
  
 **4. Capacity Matters: Hidden Width Governs Representational Power**
-Hidden Width	Final Validation Loss	Test Accuracy
-2	0.22995	0.8500
-8	0.15884	0.9250
-32	0.16292	0.9375
+| Hidden Width	| Final Validation Loss	| Test Accuracy| 
+| -| -| -|
+| 2	| 0.22995	| 0.8500| 
+| 8	| 0.15884	| 0.9250| 
+| 32	| 0.16292	| 0.9375| 
 
 - h = 2: Performs like linear baseline (85.0% accuracy). Insufficient capacity to learn curved boundaries.
 - h = 8: Dramatic improvement (92.5% accuracy). Sufficient capacity to capture complex geometry of moon dataset.
@@ -838,42 +841,44 @@ This demonstrates that capacity must match task complexity—too little leads to
 
 
 **5. Optimizer Choice Affects Convergence Speed**
-Optimizer	Final Validation Accuracy
-SGD	0.9634
-Momentum	0.9690
-Adam	0.9690
+| Optimizer	| Final Validation | Accuracy
+| -| -| -|
+| SGD	| 0.9634| 
+| Momentum	| 0.9690| 
+| Adam	| 0.9690| 
 
 Both Momentum and Adam outperform standard SGD, achieving 0.56% higher validation accuracy. Momentum dampens oscillations through velocity accumulation, while Adam combines momentum with per-parameter adaptive learning rates. All three converge to similar final performance, but Momentum and Adam reach peak accuracy faster.
 
 
 **6. PCA Reveals Low-Dimensional Structure in Digits**
-PCA Dimensions	Test Accuracy (Softmax)
-10	0.8995
-20	0.9266
-40	0.9321
-64 (full)	0.9375
+| PCA Dimensions	| Test Accuracy (Softmax)| 
+| -|- |
+| 10	| 0.8995
+| 20	| 0.9266
+| 40	| 0.9321
+| 64 (full)	| 0.9375
 
 Reducing dimensions from 64 to 40 preserves 99.4% of original accuracy. The scree plot shows an "elbow" around 10–20 components, indicating that the effective dimensionality of digit classification is substantially lower than the original pixel space. This explains why a linear model performs reasonably well—the data lies near a low-dimensional linear subspace.
 
 
 **7. Neural Network Produces Better-Calibrated Probabilities**
-Metric	Softmax	Neural Network (h=32)
-Correct Mean Confidence	0.8683	0.9515
-Correct Mean Entropy	0.4784	0.1797
-Incorrect Mean Confidence	0.4944	0.5744
-Incorrect Mean Entropy	1.3354	1.0254
+| Metric	| Softmax	| Neural Network (h=32)| 
+| -| -| -|
+| Correct Mean Confidence	| 0.8683	| 0.9515| 
+| Correct Mean Entropy	| 0.4784	| 0.1797| 
+| Incorrect Mean Confidence	| 0.4944	| 0.5744| 
+| Incorrect Mean Entropy	| 1.3354	| 1.0254| 
 
 The neural network produces more confident correct predictions (95.2% vs 86.8%) and lower uncertainty (entropy 0.180 vs 0.478). Both models show clear separation between correct and incorrect predictions, but the neural network's gap is larger. Additionally, 88.9% of neural network predictions fall in the highest confidence bin (0.8–1.0) compared to 73.1% for Softmax, with near-perfect accuracy (99.1% vs 99.6%) in that bin.
 
 
 **Central Question: When Does a Nonlinear Classifier Improve on a Linear Rule?**
 Based on our experiments, we can answer the central question of this capstone:
-Task	Linear Sufficient?	Nonlinear Helps?	Explanation
-Linear Gaussian	✓ Yes	✗ No	Data is linearly separable; 
-linear boundary is optimal
-Moons	✗ No	✓ Yes	Curved boundaries require nonlinear representation
-Digits	Partially	✓ Yes (modest)	Data is approximately low-rank; 
-linear model captures most structure, but nonlinearity provides marginal improvement
+| Task	| Linear Sufficient?	| Nonlinear Helps?	| Explanation| 
+| -| -| -| -|
+| Linear Gaussian	| ✓ Yes	| ✗ No	| Data is linearly separable; linear boundary is optimal| 
+| Moons	| ✗ No	| ✓ Yes	| Curved boundaries require nonlinear representation| 
+| Digits	| Partially	| ✓ Yes (modest)	| Data is approximately low-rank; linear model captures most structure, but nonlinearity provides marginal improvement| 
 
 
 ### Conclusion
