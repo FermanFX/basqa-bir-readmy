@@ -597,7 +597,7 @@ Interpretation: The nonlinear geometry of this task requires a classifier capabl
 
 
 
-Digits Benchmark
+### Digits Benchmark
 We evaluated both models on the fixed digits dataset with 64-dimensional pixel features and 10 classes.
 
 <img width="1009" height="572" alt="image" src="https://github.com/user-attachments/assets/d56365e4-9412-479f-a3da-428bc7837910" />
