@@ -540,12 +540,20 @@ Table 1 shows the training progression.
 
 
 **Table 1: Loss Decrease on 50-Example Subset (Implementation Verification)**
-Epoch	Softmax loss	NN loss
+		
 1    	2.302	        2.298
 50	    1.234	        1.156
 100	    0.456	        0.389
 150	    0.234	        0.178
 200	    0.145	        0.098
+
+| Epoch  | Softmax loss | NN loss |
+| ------ | ------------ | ------- |
+| 1 | 2.302  | 2.298      |
+| 50  | 1.234 | 1.156      |
+| 100 | 0.456  | 0.389      |
+| 150  | 0.234 | 0.178      |
+| 200  | 0.145 | 0.098      |
 
 
 Both models achieved near-zero loss on this tiny subset by epoch 200, confirming that:
